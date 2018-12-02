@@ -125,15 +125,15 @@ namespace ShaderForm.Camera
 			}
 		}
 
-		private static Vector3 RotateX(Vector3 vec, float angle)
+		private static Vector3 RotateX(Vector3 vec, float radians)
 		{
-			var rotateXM = Matrix3.CreateRotationX(angle);
+			var rotateXM = Matrix3.CreateRotationX(MathHelper.RadiansToDegrees(radians));
 			return Vector3.Transform(vec, rotateXM);
 		}
 
-		private static Vector3 RotateY(Vector3 vec, float angle)
+		private static Vector3 RotateY(Vector3 vec, float radians)
 		{
-			var rotateZM = Matrix3.CreateRotationY(angle);
+			var rotateZM = Matrix3.CreateRotationY(MathHelper.RadiansToDegrees(radians));
 			return Vector3.Transform(vec, rotateZM);
 		}
 	}
